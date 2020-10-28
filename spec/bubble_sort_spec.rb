@@ -22,7 +22,8 @@ describe Sorter do
 
     context "given a non array" do
         it "should return an error" do
-            #expect(sorter.bubble_sort)
+            expect{ sorter.bubble_sort("a string") }
+                .to raise_error(ArgumentError, "Expected an array")
         end
     end
 end

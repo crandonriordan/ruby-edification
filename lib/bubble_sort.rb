@@ -1,10 +1,12 @@
 class Sorter
     
     def bubble_sort(arr)
+        unless arr.is_a? Array
+            raise ArgumentError.new("Expected an array")
+        end
         len = arr.length
         0.upto(arr.length - 1) do 
             1.upto(arr.length - 1) do |index|
-                puts "index #{index}"
                 first = arr[index - 1]
                 second = arr[index]
                 if first > second
